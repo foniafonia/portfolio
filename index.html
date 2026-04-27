@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>José Aserraf — Logopeda | IA Aplicada</title>
+  <title>Logoped-IA — IA Aplicada a Logopedia Clínica</title>
   <style>
     * {
       margin: 0;
@@ -14,69 +14,96 @@
     :root {
       --primary: #7c3aed;
       --secondary: #10b981;
-      --dark: #1a1a2e;
+      --dark: #0f172a;
       --light: #f8f9fa;
-      --text: #2d3748;
-      --border: #e2e8f0;
+      --text: #e2e8f0;
+      --text-dark: #1e293b;
+      --border: #334155;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
       color: var(--text);
-      background: var(--light);
+      background: var(--dark);
     }
 
-    header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 80px 20px;
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      padding: 120px 20px;
       text-align: center;
+      border-bottom: 1px solid var(--border);
     }
 
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 2.5em;
       font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
     }
 
-    header p {
+    .hero h1 {
+      font-size: 3.5em;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .hero p {
       font-size: 1.3em;
-      opacity: 0.95;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.8;
     }
 
-    .profile {
-      max-width: 1200px;
-      margin: -80px auto 60px;
-      padding: 40px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    .hero-cta {
       display: flex;
-      gap: 40px;
-      align-items: center;
+      gap: 15px;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
-    .profile img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary);
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1em;
+      transition: all 0.3s;
+      border: 2px solid;
+      cursor: pointer;
     }
 
-    .profile-text h2 {
-      font-size: 2em;
-      margin-bottom: 15px;
-      color: var(--dark);
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-color: transparent;
     }
 
-    .profile-text p {
-      font-size: 1.1em;
-      color: #666;
-      line-height: 1.8;
-      max-width: 500px;
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px rgba(124, 58, 237, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(124, 58, 237, 0.1);
+      border-color: var(--primary);
     }
 
     .container {
@@ -85,338 +112,447 @@
       padding: 0 20px;
     }
 
-    .projects {
-      margin: 80px 0;
+    /* Problem */
+    .problem {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #0f172a 0%, #1a1a3e 100%);
+      border-bottom: 1px solid var(--border);
     }
 
-    .projects h2 {
+    .section-title {
       font-size: 2.5em;
-      margin-bottom: 40px;
-      color: var(--dark);
+      font-weight: 800;
       text-align: center;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
       margin-bottom: 60px;
+      color: var(--text);
     }
 
-    .project-card {
-      background: white;
-      border-radius: 8px;
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .problem-item {
       padding: 30px;
-      border: 2px solid var(--border);
-      transition: all 0.3s ease;
+      background: rgba(124, 58, 237, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 50px rgba(124, 58, 237, 0.15);
-      border-color: var(--primary);
-    }
-
-    .project-card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
+    .problem-item h3 {
       font-size: 1.4em;
+      margin-bottom: 15px;
+      color: #f1f5f9;
     }
 
-    .project-card p {
-      color: #666;
-      margin-bottom: 15px;
+    .problem-item p {
+      color: #cbd5e1;
       font-size: 0.95em;
     }
 
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 15px;
+    /* Solution */
+    .solution {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #1a1a3e 0%, #0f172a 100%);
+      border-bottom: 1px solid var(--border);
     }
 
-    .tag {
-      background: var(--light);
-      color: var(--primary);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.85em;
-      font-weight: 600;
+    .solution-content {
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .project-links {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9em;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #6d28d9;
-      transform: scale(1.05);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .btn-secondary:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    .skills {
-      background: white;
-      padding: 60px 40px;
-      border-radius: 8px;
-      margin: 60px 0;
-    }
-
-    .skills h2 {
-      font-size: 2.5em;
+    .solution-text {
+      font-size: 1.1em;
+      line-height: 2;
+      color: #cbd5e1;
       margin-bottom: 40px;
-      color: var(--dark);
-      text-align: center;
     }
 
-    .skills-grid {
+    .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
 
-    .skill-item {
+    .feature {
       padding: 20px;
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+      background: rgba(16, 185, 129, 0.05);
+      border-left: 3px solid var(--secondary);
       border-radius: 8px;
-      border-left: 4px solid var(--primary);
     }
 
-    .skill-item h3 {
-      color: var(--primary);
+    .feature h4 {
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #cbd5e1;
+      font-size: 0.9em;
+    }
+
+    /* Traction */
+    .traction {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #0f172a 0%, #1a1a3e 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .traction-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .traction-card {
+      padding: 40px;
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .traction-number {
+      font-size: 3em;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
     }
 
-    .skill-item p {
-      color: #666;
+    .traction-label {
+      font-size: 1.1em;
+      color: #cbd5e1;
+    }
+
+    /* Pillars */
+    .pillars {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #1a1a3e 0%, #0f172a 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .pillar {
+      padding: 40px;
+      background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .pillar h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+
+    .pillar p {
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    /* Roadmap */
+    .roadmap {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #0f172a 0%, #1a1a3e 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .roadmap-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .roadmap-item {
+      padding: 30px;
+      background: rgba(124, 58, 237, 0.05);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+    }
+
+    .roadmap-item h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+
+    .roadmap-item p {
+      color: #cbd5e1;
       font-size: 0.9em;
     }
 
-    .contact {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 80px 40px;
-      border-radius: 8px;
+    /* Team */
+    .team {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, #1a1a3e 0%, #0f172a 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .team-content {
+      max-width: 600px;
+      margin: 0 auto;
       text-align: center;
-      margin: 80px 0;
     }
 
-    .contact h2 {
-      font-size: 2.5em;
+    .founder {
+      padding: 40px;
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    .founder img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid var(--primary);
       margin-bottom: 20px;
+      object-fit: cover;
     }
 
-    .contact p {
+    .founder h3 {
+      color: var(--text);
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .founder p {
+      color: #cbd5e1;
+      margin-bottom: 5px;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta h2 {
+      font-size: 2.5em;
+      color: white;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .cta p {
       font-size: 1.1em;
-      margin-bottom: 30px;
-      opacity: 0.95;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
     }
 
-    .contact-links {
+    .cta-links {
       display: flex;
+      gap: 15px;
       justify-content: center;
-      gap: 20px;
       flex-wrap: wrap;
     }
 
-    .contact-links a {
+    .cta-links a {
       background: rgba(255, 255, 255, 0.2);
       color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
+      padding: 12px 28px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s;
       border: 2px solid white;
     }
 
-    .contact-links a:hover {
+    .cta-links a:hover {
       background: white;
       color: var(--primary);
     }
 
+    /* Footer */
     footer {
-      text-align: center;
       padding: 40px 20px;
-      color: #666;
+      text-align: center;
+      color: #64748b;
       border-top: 1px solid var(--border);
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2em; }
-      .profile { flex-direction: column; text-align: center; margin: -60px 20px 40px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2em; }
+      .hero p { font-size: 1.1em; }
+      .section-title { font-size: 1.8em; }
+      .hero-cta { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>José Aserraf</h1>
-    <p>Logopeda | IA Aplicada a Logopedia Clínica</p>
-  </header>
-
-  <div class="container">
-    <section class="profile">
-      <img src="https://avatars.githubusercontent.com/u/216000539?v=4" alt="José Aserraf">
-      <div class="profile-text">
-        <h2>Sobre mí</h2>
-        <p>Logopeda con 10+ años de experiencia clínica. Especializado en aplicación de IA a logopedia: herramientas digitales, formación profesional e investigación. Creo soluciones tecnológicas que apoyan la intervención logopédica, nunca sustituyéndola.</p>
-        <p style="margin-top: 15px; font-size: 0.9em; color: #999;">📍 España | Logoped-IA</p>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="logo">Logoped-IA</div>
+      <h1>IA Aplicada a Logopedia Clínica</h1>
+      <p>Herramientas inteligentes que potencian la intervención logopédica. No sustituyen al logopeda. Lo amplifican.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary">Colaborar / Invertir</a>
+        <a href="https://t.me/logopedia_ia" class="btn btn-secondary">Comunidad Telegram (900+)</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="projects">
-      <h2>Proyectos Destacados</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>🎯 LectoViva v2</h3>
-          <p>Herramienta adaptativa de lectura y escritura para dislexia. Tipografía dislexia-friendly, espaciado personalizable.</p>
-          <div class="project-tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">Accesibilidad</span>
-          </div>
-          <div class="project-links">
-            <a href="https://foniafonia.github.io/lectoviva-v2/" class="btn btn-primary">Demo</a>
-            <a href="https://github.com/foniafonia/lectoviva-v2" class="btn btn-secondary">GitHub</a>
-          </div>
+  <section class="problem">
+    <div class="container">
+      <h2 class="section-title">El Problema</h2>
+      <div class="problem-grid">
+        <div class="problem-item">
+          <h3>📊 Diagnóstico Manual</h3>
+          <p>La evaluación logopédica sigue siendo analógica. Mediciones imprecisas, análisis subjetivo, imposible cuantificar evolución en tiempo real.</p>
         </div>
-
-        <div class="project-card">
-          <h3>📊 VocalTrack</h3>
-          <p>Análisis acústico vocal en tiempo real. F0, jitter, shimmer, HNR, CPP.</p>
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Audio</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/foniafonia/vocaltrack" class="btn btn-secondary">GitHub</a>
-          </div>
+        <div class="problem-item">
+          <h3>🚫 Falta de Herramientas</h3>
+          <p>No hay software clínico específico para logopedia que integre IA. Herramientas genéricas, no pensadas en flujos reales de intervención.</p>
         </div>
-
-        <div class="project-card">
-          <h3>📝 Logoped-IA Examen</h3>
-          <p>Evaluación interactiva de competencias en IA aplicada a logopedia.</p>
-          <div class="project-tags">
-            <span class="tag">HTML5</span>
-            <span class="tag">Educación</span>
-          </div>
-          <div class="project-links">
-            <a href="https://foniafonia.github.io/logoped-ia-examen/" class="btn btn-primary">Demo</a>
-            <a href="https://github.com/foniafonia/logoped-ia-examen" class="btn btn-secondary">GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>🎮 LLENO/VACÍO TEACCH</h3>
-          <p>Actividad TEACCH interactiva con arrastrar-soltar. 12 páginas, análisis de precisión.</p>
-          <div class="project-tags">
-            <span class="tag">HTML5</span>
-            <span class="tag">TEACCH</span>
-          </div>
-          <div class="project-links">
-            <a href="https://foniafonia.github.io/lleno-vacio-teacch/" class="btn btn-primary">Demo</a>
-            <a href="https://github.com/foniafonia/lleno-vacio-teacch" class="btn btn-secondary">GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>📖 ADAPRO Plus</h3>
-          <p>Herramienta avanzada de lectura adaptativa para dislexia.</p>
-          <div class="project-tags">
-            <span class="tag">CSS3</span>
-            <span class="tag">Dislexia</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/foniafonia/adapro-plus" class="btn btn-secondary">GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>🎵 ARAIA</h3>
-          <p>Análisis de ritmo adaptativo para disartria y apraxia.</p>
-          <div class="project-tags">
-            <span class="tag">Audio</span>
-            <span class="tag">Ritmo</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/foniafonia/araia" class="btn btn-secondary">GitHub</a>
-          </div>
+        <div class="problem-item">
+          <h3>📚 Brecha en Formación</h3>
+          <p>Logopedas sin acceso a formación en IA aplicada. Desconocen qué es posible. Industria digital avanza, logopedia se queda atrás.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="skills">
-      <h2>Habilidades</h2>
-      <div class="skills-grid">
-        <div class="skill-item">
-          <h3>🧠 Logopedia</h3>
-          <p>Disfonía, dislexia, apraxia, TEL, disfagia, trastornos prosódicos.</p>
+  <section class="solution">
+    <div class="container solution-content">
+      <h2 class="section-title">La Solución</h2>
+      <p class="solution-text">Logoped-IA es un ecosistema de herramientas inteligentes diseñadas específicamente para logopedia clínica. Análisis acústico en tiempo real, detección automática de patrones, métricas cuantificables, formación profesional, comunidad colaborativa.</p>
+      <h3 style="color: var(--text); margin-bottom: 20px;">Pilares Tecnológicos</h3>
+      <div class="features">
+        <div class="feature">
+          <h4>🎯 Análisis Acústico Real-time</h4>
+          <p>F0, jitter, shimmer, HNR. Detección de pitch. Intervención inmediata basada en datos.</p>
         </div>
-        <div class="skill-item">
-          <h3>🤖 IA Aplicada</h3>
-          <p>Análisis acústico, machine learning, procesamiento de lenguaje.</p>
+        <div class="feature">
+          <h4>📖 Herramientas Adaptativas</h4>
+          <p>Lectura, escritura, ritmo, praxias. Interfaces clínicas diseñadas para logopedas.</p>
         </div>
-        <div class="skill-item">
-          <h3>💻 Desarrollo</h3>
-          <p>HTML5, CSS3, JavaScript, Python, análisis acústico, MediaPipe.</p>
+        <div class="feature">
+          <h4>📊 Medición y Seguimiento</h4>
+          <p>Dashboard clínico. Métricas de evolución. Reportes automáticos para pacientes y colegas.</p>
         </div>
-        <div class="skill-item">
+        <div class="feature">
+          <h4>🎓 Formación Profesional</h4>
+          <p>Academia de IA para logopedas. Cursos interactivos, evaluaciones, certificaciones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="traction">
+    <div class="container">
+      <h2 class="section-title">Traction</h2>
+      <div class="traction-grid">
+        <div class="traction-card">
+          <div class="traction-number">900+</div>
+          <div class="traction-label">Seguidores Comunidad Telegram</div>
+        </div>
+        <div class="traction-card">
+          <div class="traction-number">13</div>
+          <div class="traction-label">Repositorios Públicos (demos live)</div>
+        </div>
+        <div class="traction-card">
+          <div class="traction-number">10+</div>
+          <div class="traction-label">Años Experiencia Clínica</div>
+        </div>
+        <div class="traction-card">
+          <div class="traction-number">∞</div>
+          <div class="traction-label">Potencial Logopedia Digital</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="container">
+      <h2 class="section-title">Tres Pilares</h2>
+      <div class="pillars-grid">
+        <div class="pillar">
+          <h3>🛠️ Herramientas</h3>
+          <p>Suite clínica completa. VocalTrack (análisis acústico), LectoViva (lectura adaptativa), TEACCH interactivo, ARAIA (ritmo). Todo open-source, demostrable, clínicamente validable.</p>
+        </div>
+        <div class="pillar">
           <h3>📚 Formación</h3>
-          <p>Diseño de cursos, evaluación, contenido educativo interactivo.</p>
+          <p>Academia Logoped-IA. Cursos profesionales sobre IA en logopedia. Objetivo: capacitar a 1000+ logopedas en 2 años. Revenue model claro.</p>
         </div>
-        <div class="skill-item">
-          <h3>🔬 Investigación</h3>
-          <p>Análisis de datos, validación clínica, estudios de eficacia.</p>
-        </div>
-        <div class="skill-item">
-          <h3>🎯 Metodologías</h3>
-          <p>TEACCH, Onda Educa, Verbotonal, enfoque centrado en evidencia.</p>
+        <div class="pillar">
+          <h3>🤝 Comunidad</h3>
+          <p>900+ logopedas activos en Telegram. Network profesional, casos de uso compartidos, feedback continuo, co-creación de soluciones.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact">
-      <h2>Conecta Conmigo</h2>
-      <p>¿Proyecto, colaboración o consultoría en IA aplicada a logopedia?</p>
-      <div class="contact-links">
-        <a href="https://github.com/foniafonia">🔗 GitHub</a>
+  <section class="roadmap">
+    <div class="container">
+      <h2 class="section-title">Roadmap 2026-2028</h2>
+      <div class="roadmap-items">
+        <div class="roadmap-item">
+          <h4>Q2-Q3 2026</h4>
+          <p>Suite clínica MVP. Dashboard integrado. Primeros 100 usuarios pagos. Validación de modelo de negocio.</p>
+        </div>
+        <div class="roadmap-item">
+          <h4>Q4 2026</h4>
+          <p>Lanzamiento Academia (primera cohorte 500 logopedas). Partnership con asociaciones profesionales.</p>
+        </div>
+        <div class="roadmap-item">
+          <h4>2027</h4>
+          <p>Expansión internacional. Integraciones con sistemas clínicos. Series A de inversión.</p>
+        </div>
+        <div class="roadmap-item">
+          <h4>2028</h4>
+          <p>Líder en IA aplicada a logopedia en LATAM y Europa. 10K+ usuarios activos. Empresa rentable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container team-content">
+      <h2 class="section-title">Founder</h2>
+      <div class="founder">
+        <img src="https://avatars.githubusercontent.com/u/216000539?v=4" alt="José Aserraf">
+        <h3>José Aserraf</h3>
+        <p><strong>Logopeda | IA Researcher</strong></p>
+        <p>10+ años clínica. Especialista en disfonía, dislexia, apraxia.</p>
+        <p style="margin-top: 15px; font-size: 0.85em; color: #94a3b8;">Programador (Python, JavaScript, análisis acústico). Emprendedor. Visión: IA como herramienta clínica, nunca sustituto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contacto">
+    <div class="container">
+      <h2>¿Interesado en Colaborar?</h2>
+      <p>Inversión de Ronda Seed | Partnerships Clínicos | Colaboración Académica | Integración Tecnológica</p>
+      <div class="cta-links">
+        <a href="https://github.com/foniafonia">🔗 GitHub (repos públicos)</a>
+        <a href="https://t.me/logopedia_ia">💬 Telegram Comunidad</a>
         <a href="https://www.linkedin.com/in/joseaserraf/">💼 LinkedIn</a>
         <a href="mailto:globalizafonia@gmail.com">📧 Email</a>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2026 José Aserraf. Logoped-IA. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Logoped-IA. IA Aplicada a Logopedia Clínica.</p>
   </footer>
 </body>
 </html>
