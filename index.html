@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>José Aserraf | Logopeda + IA Creador</title>
+  <title>José Aserraf | Logopeda • IA Creador • Builder</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+
     body {
-      background: #0a0a0a;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      font-size: 15px;
+      background: #0b1b0f;
+      color: #c8ffb0;
+      font-family: 'Courier New', monospace;
+      line-height: 1.7;
+      font-size: 14px;
+      letter-spacing: 0.3px;
     }
 
     .scanlines {
@@ -24,76 +25,93 @@
       pointer-events: none;
       background: repeating-linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.08),
-        rgba(0, 0, 0, 0.08) 1px,
-        transparent 1px,
-        transparent 2px
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 2px,
+        transparent 2px,
+        transparent 4px
       );
       z-index: 999;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 40px 25px;
       position: relative;
       z-index: 1;
     }
 
     header {
-      border: 2px solid #10b981;
-      padding: 25px;
-      margin-bottom: 30px;
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
-      border-radius: 8px;
+      border: 4px solid #ffd700;
+      padding: 30px;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(0, 255, 0, 0.05) 100%);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
     }
 
     .header-title {
       font-weight: bold;
-      font-size: 28px;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #10b981 0%, #7c3aed 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 36px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+      color: #ffd700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
     .header-subtitle {
-      font-size: 14px;
-      color: #94a3b8;
-      margin-bottom: 15px;
+      font-size: 13px;
+      color: #00ff88;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .divider {
+      border-top: 2px dotted #00ff88;
+      margin: 15px 0;
     }
 
     .system-info {
       font-size: 12px;
-      color: #10b981;
+      color: #c8ffb0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
     }
 
     .info-item {
-      padding: 8px;
-      border-left: 2px solid #7c3aed;
+      padding: 10px;
+      border-left: 3px solid #00ff88;
       padding-left: 12px;
+      background: rgba(0, 255, 136, 0.02);
     }
 
     section {
-      margin-bottom: 30px;
-      border: 1px solid #334155;
-      padding: 25px;
-      background: rgba(15, 23, 42, 0.6);
-      border-radius: 8px;
+      margin-bottom: 40px;
+      border: 3px solid #00ff88;
+      padding: 30px;
+      background: rgba(11, 27, 15, 0.8);
+      box-shadow: inset 0 0 10px rgba(0, 255, 136, 0.05);
     }
 
     section h2 {
-      border-bottom: 2px solid #10b981;
-      padding-bottom: 12px;
-      margin-bottom: 20px;
+      border-bottom: 3px solid #ffd700;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
       font-size: 18px;
+      letter-spacing: 2px;
+      color: #ffd700;
+      text-transform: uppercase;
+    }
+
+    section h3 {
+      color: #00ff88;
+      margin-top: 20px;
+      margin-bottom: 15px;
+      font-size: 13px;
       letter-spacing: 1px;
-      color: #10b981;
+      text-transform: uppercase;
+      border-left: 3px solid #00ff88;
+      padding-left: 10px;
     }
 
     .two-col {
@@ -105,16 +123,9 @@
 
     .col {
       padding: 20px;
-      background: rgba(124, 58, 237, 0.05);
-      border-left: 3px solid #7c3aed;
-      border-radius: 4px;
-    }
-
-    .col h3 {
-      color: #7c3aed;
-      margin-bottom: 15px;
-      font-size: 14px;
-      letter-spacing: 0.5px;
+      background: rgba(0, 255, 136, 0.03);
+      border: 2px dashed #00ff88;
+      border-radius: 2px;
     }
 
     .col ul {
@@ -122,128 +133,195 @@
     }
 
     .col li {
-      padding: 8px 0;
-      border-bottom: 1px dotted #475569;
-      color: #cbd5e1;
-      font-size: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+      color: #c8ffb0;
+      font-size: 13px;
     }
 
     .col li:last-child {
       border: none;
     }
 
+    p {
+      color: #c8ffb0;
+      margin-bottom: 15px;
+      line-height: 1.8;
+    }
+
+    strong {
+      color: #ffd700;
+    }
+
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 15px;
-      margin: 20px 0;
+      margin: 25px 0;
     }
 
     .stat-box {
-      border: 1px solid #10b981;
-      padding: 20px;
+      border: 3px solid #00ff88;
+      padding: 25px;
       text-align: center;
-      background: rgba(16, 185, 129, 0.05);
-      border-radius: 6px;
+      background: rgba(0, 255, 136, 0.05);
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.1);
     }
 
     .stat-number {
-      font-size: 32px;
+      font-size: 42px;
       font-weight: bold;
-      color: #10b981;
-      margin-bottom: 8px;
+      color: #ffd700;
+      margin-bottom: 10px;
     }
 
     .stat-label {
-      font-size: 13px;
-      color: #94a3b8;
+      font-size: 12px;
+      color: #00ff88;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .stat-detail {
+      font-size: 11px;
+      color: #c8ffb0;
+      margin-top: 10px;
     }
 
     .cta-section {
-      background: linear-gradient(135deg, #7c3aed 0%, #10b981 100%);
-      padding: 40px;
-      border-radius: 8px;
-      margin: 30px 0;
+      background: linear-gradient(135deg, #1a3a1a 0%, #0f2f0f 100%);
+      padding: 50px;
+      border: 4px solid #ffd700;
+      margin: 40px 0;
       text-align: center;
-      border: none;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
     }
 
     .cta-section h2 {
       border: none;
-      color: white;
-      font-size: 24px;
-      margin-bottom: 15px;
+      color: #ffd700;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
 
     .cta-text {
-      color: white;
-      font-size: 15px;
-      margin-bottom: 25px;
-      line-height: 1.8;
+      color: #c8ffb0;
+      font-size: 14px;
+      margin-bottom: 30px;
+      line-height: 1.9;
     }
 
     .links-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     .link-btn {
       display: inline-block;
-      padding: 12px 20px;
-      background: rgba(255, 255, 255, 0.15);
-      color: white;
+      padding: 14px 22px;
+      background: rgba(0, 255, 136, 0.1);
+      color: #ffd700;
       text-decoration: none;
-      border: 1px solid white;
-      border-radius: 6px;
+      border: 2px solid #ffd700;
       transition: all 0.2s;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
     }
 
     .link-btn:hover {
-      background: white;
-      color: #7c3aed;
-      transform: translateY(-2px);
+      background: #ffd700;
+      color: #0b1b0f;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      transform: scale(1.05);
     }
 
     .tag {
       display: inline-block;
-      border: 1px solid #10b981;
-      padding: 4px 10px;
+      border: 2px solid #00ff88;
+      padding: 6px 12px;
       margin-right: 8px;
       margin-bottom: 8px;
-      border-radius: 12px;
-      font-size: 12px;
-      color: #10b981;
+      border-radius: 2px;
+      font-size: 11px;
+      color: #00ff88;
+      background: rgba(0, 255, 136, 0.05);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .warning-box {
-      border: 2px solid #f97316;
-      padding: 15px;
-      margin: 20px 0;
-      background: rgba(249, 115, 22, 0.05);
-      border-radius: 6px;
-      color: #fed7aa;
-      font-size: 13px;
+      border: 3px solid #ff6b6b;
+      padding: 20px;
+      margin: 30px 0;
+      background: rgba(255, 107, 107, 0.05);
+      color: #ffb3b3;
+      font-size: 12px;
       line-height: 1.8;
     }
 
     footer {
-      border-top: 2px solid #334155;
-      padding-top: 20px;
-      margin-top: 30px;
-      font-size: 12px;
-      color: #64748b;
+      border-top: 3px solid #00ff88;
+      padding-top: 25px;
+      margin-top: 40px;
+      font-size: 11px;
+      color: #00ff88;
       text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .timeline {
+      border-left: 3px solid #ffd700;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .timeline-item {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed #00ff88;
+    }
+
+    .timeline-item:last-child {
+      border: none;
+    }
+
+    .timeline-year {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .timeline-content {
+      color: #c8ffb0;
+      font-size: 13px;
+    }
+
+    .mini-icon {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #ffd700;
+      margin-right: 8px;
+      vertical-align: middle;
     }
 
     @media (max-width: 768px) {
       .two-col { grid-template-columns: 1fr; }
       .stat-grid { grid-template-columns: 1fr; }
       .links-grid { grid-template-columns: 1fr; }
-      .header-title { font-size: 22px; }
+      .header-title { font-size: 28px; }
+      .cta-section { padding: 30px; }
+      body { font-size: 13px; }
     }
   </style>
 </head>
@@ -253,129 +331,305 @@
 
     <header>
       <div class="header-title">JOSÉ ASERRAF</div>
-      <div class="header-subtitle">Logopeda | IA Creador | Director Gabinete Fönia</div>
-      <div style="margin-top: 15px; border-top: 1px solid #10b981; padding-top: 15px;">
-        <div class="system-info">
-          <div class="info-item">📍 Melilla, España (remoto)</div>
-          <div class="info-item">🏥 Clínica: Gabinete Fönia</div>
-          <div class="info-item">🤖 Startup: Logoped-IA</div>
-          <div class="info-item">👥 Comunidad: 900+ logopedas</div>
-        </div>
+      <div class="header-subtitle">► LOGOPEDA • IA CREADOR • BUILDER • FOUNDER ◄</div>
+      <div class="divider"></div>
+      <div class="system-info">
+        <div class="info-item"><span class="mini-icon"></span>Melilla, España | Remoto</div>
+        <div class="info-item"><span class="mini-icon"></span>18+ años experiencia clínica</div>
+        <div class="info-item"><span class="mini-icon"></span>Director Gabinete Fönia</div>
+        <div class="info-item"><span class="mini-icon"></span>Presidente ASMEL</div>
+        <div class="info-item"><span class="mini-icon"></span>900+ comunidad Telegram</div>
+        <div class="info-item"><span class="mini-icon"></span>6 libros publicados</div>
       </div>
     </header>
 
+    <!-- QUIÉN SOY -->
     <section>
-      <h2>SOBRE MÍ</h2>
-      <p style="color: #cbd5e1; margin-bottom: 15px;">
-        Logopeda con 10+ años de experiencia clínica. Director y fundador de Gabinete Fönia 
-        (Melilla, España). Especialista en disfonía, dislexia, apraxia, tartamudez, disfagia.
+      <h2>► IDENTIDAD PROFESIONAL</h2>
+      <p>
+        Logopeda clínico con <strong>más de 18 años</strong> de experiencia real en intervención en lenguaje,
+        voz y lectoescritura. Director del <strong>Gabinete Fönia</strong> (Melilla).
+        Presidente de <strong>ASMEL</strong> (Asociación de Profesionales).
       </p>
-      <p style="color: #cbd5e1; margin-bottom: 15px;">
-        Creador de <strong>Logoped-IA</strong>: ecosistema de herramientas inteligentes para logopedia clínica. 
-        No soy programador — soy logopeda creativo obsesionado con IA aplicada y no-code.
+      <p>
+        Perfil orientado a la <strong>práctica real</strong>, no a la teoría ni la tendencia.
+        Evolución progresiva desde clínica pura hacia desarrollo de sistemas, formación y soluciones digitales aplicadas a logopedia.
       </p>
-      <p style="color: #10b981; font-weight: bold;">
-        Mi fortaleza: Clínica real + visión IA + comunidad activa + tenacidad.
+      <p style="color: #ffd700; font-weight: bold; border-left: 3px solid #ffd700; padding-left: 12px;">
+        No trabajo desde lo teórico. Trabajo desde la prueba constante, el error y la mejora.
       </p>
     </section>
 
+    <!-- EXPERIENCIA CLÍNICA DETALLADA -->
     <section>
-      <h2>GABINETE FÖNIA | CLÍNICA ACTIVA</h2>
+      <h2>► EXPERIENCIA CLÍNICA</h2>
+
+      <h3>Ejercicio profesional</h3>
       <div class="two-col">
         <div class="col">
-          <h3>SERVICIOS CLÍNICOS</h3>
+          <h3 style="margin-top: 0; color: #c8ffb0; border: none;">Trayectoria</h3>
           <ul>
-            <li>✓ Evaluación y diagnóstico logopédico</li>
-            <li>✓ Tratamiento de voz y disfonía</li>
-            <li>✓ Rehabilitación del habla</li>
-            <li>✓ Lectoescritura (dislexia)</li>
-            <li>✓ Disfagia</li>
-            <li>✓ Atención temprana (0-6 años)</li>
-            <li>✓ Asesoramiento pedagógico</li>
+            <li>18+ años de intervención clínica activa</li>
+            <li>Director Gabinete Fönia (clínica propia)</li>
+            <li>Experiencia en Hospital Comarcal</li>
+            <li>Atención a pacientes pediátricos y adultos</li>
+            <li>Evaluación y diagnóstico estructurado</li>
+            <li>Intervención funcional en contexto real</li>
           </ul>
         </div>
         <div class="col">
-          <h3>EQUIPO & CREDIBILIDAD</h3>
+          <h3 style="margin-top: 0; color: #c8ffb0; border: none;">Especialidades clínicas</h3>
           <ul>
-            <li>✓ Equipo multidisciplinar</li>
-            <li>✓ 100+ testimonios verificados</li>
-            <li>✓ 10+ años de trayectoria</li>
-            <li>✓ Clínicamente validado</li>
-            <li>✓ Tecnológicamente avanzado</li>
-            <li>✓ Enfoque humano + confianza</li>
+            <li>✓ Lenguaje y habla</li>
+            <li>✓ Dislexia y lectoescritura</li>
+            <li>✓ Disfonía y terapia de voz</li>
+            <li>✓ Apraxia del habla</li>
+            <li>✓ Tartamudez</li>
+            <li>✓ Disfagia</li>
+            <li>✓ Atención temprana (0-6)</li>
+            <li>✓ Terapia miofuncional</li>
           </ul>
         </div>
       </div>
-      <p style="color: #94a3b8; font-size: 13px; margin-top: 15px;">
-        📍 <strong>Web:</strong> <a href="https://www.logopediafonia.com" target="_blank" style="color: #10b981; text-decoration: none;">www.logopediafonia.com</a>
+
+      <h3>Enfoque clínico</h3>
+      <p>
+        Evaluación estructurada basada en evidencia. Intervención funcional aplicada a contextos reales
+        (familia, escuela, trabajo). Integración de tecnología como herramienta al servicio del criterio clínico,
+        nunca como sustituto.
       </p>
     </section>
 
+    <!-- GABINETE FÖNIA -->
     <section>
-      <h2>LOGOPED-IA | STARTUP DE IA + LOGOPEDIA</h2>
+      <h2>► GABINETE FÖNIA | CLÍNICA ACTIVA</h2>
       <div class="two-col">
         <div class="col">
-          <h3>HERRAMIENTAS CLÍNICAS</h3>
+          <h3 style="margin-top: 0;">Servicios</h3>
           <ul>
-            <li>🎯 VocalTrack (análisis acústico)</li>
-            <li>📖 LectoViva v2 (lectura adaptativa)</li>
-            <li>🎮 LLENO/VACÍO TEACCH (actividades)</li>
-            <li>🎵 ARAIA (ritmo y prosodias)</li>
-            <li>🤳 MyoSync (praxias con cámara)</li>
-            <li>🎲 Logopac (juegos semánticos)</li>
+            <li>Evaluación y diagnóstico logopédico</li>
+            <li>Tratamiento voz y disfonía</li>
+            <li>Rehabilitación habla</li>
+            <li>Lectoescritura (dislexia)</li>
+            <li>Disfagia</li>
+            <li>Atención temprana (0-6 años)</li>
+            <li>Asesoramiento pedagógico</li>
+            <li>Terapia miofuncional</li>
           </ul>
         </div>
         <div class="col">
-          <h3>FORMACIÓN & COMUNIDAD</h3>
+          <h3 style="margin-top: 0;">Credibilidad</h3>
+          <ul>
+            <li>100+ testimonios verificados</li>
+            <li>18+ años de trayectoria</li>
+            <li>Equipo multidisciplinar</li>
+            <li>Clínicamente validado</li>
+            <li>Enfoque humanista</li>
+            <li>Tecnología integrada</li>
+            <li>Resultados medibles</li>
+            <li>Confianza profesional</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 20px; border-top: 2px dashed #00ff88; padding-top: 15px;">
+        🌐 <strong>Web:</strong> <a href="https://www.logopediafonia.com" target="_blank" style="color: #ffd700; text-decoration: none;">www.logopediafonia.com</a>
+      </p>
+    </section>
+
+    <!-- LOGOPED-IA -->
+    <section>
+      <h2>► LOGOPED-IA | STARTUP IA APLICADA</h2>
+      <p style="margin-bottom: 25px;">
+        Ecosistema de herramientas inteligentes para logopedia.
+        No soy programador — soy logopeda creativo obsesionado con IA aplicada y construcción de soluciones no-code.
+      </p>
+      <div class="two-col">
+        <div class="col">
+          <h3 style="margin-top: 0;">Herramientas clínicas</h3>
+          <ul>
+            <li>🎯 VocalTrack (análisis acústico)</li>
+            <li>📖 LectoViva v2 (lectura adaptativa)</li>
+            <li>🎮 LLENO/VACÍO TEACCH (intervención)</li>
+            <li>🎵 ARAIA (ritmo y prosodias)</li>
+            <li>🤳 MyoSync (praxias con cámara)</li>
+            <li>🎲 Logopac (juegos semánticos)</li>
+            <li>📊 Radar Clínico Digital (seguimiento)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 style="margin-top: 0;">Formación & Comunidad</h3>
           <ul>
             <li>📚 Academia Logoped-IA (cursos)</li>
             <li>📝 Examen interactivo (evaluación)</li>
             <li>💬 900+ logopedas en Telegram</li>
             <li>📊 Suite Pruebas + Membresía</li>
-            <li>🌐 13 repos públicos (demostrables)</li>
-            <li>🔗 6 demos live en GitHub Pages</li>
+            <li>🌐 13 repos públicos GitHub</li>
+            <li>🔗 6 demos live funcionales</li>
+            <li>🎓 Formación continua</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- FORMACIÓN IMPARTIDA -->
     <section>
-      <h2>TRACTION & MÉTRICAS</h2>
-      <div class="stat-grid">
-        <div class="stat-box">
-          <div class="stat-number">900+</div>
-          <div class="stat-label">Logopedas en Telegram</div>
-          <div style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Red activa, feedback diario</div>
+      <h2>► DOCENCIA & FORMACIÓN IMPARTIDA</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">CPR Melilla</div>
+          <div class="timeline-content">Cursos de formación permanente en logopedia aplicada y comunicación</div>
         </div>
-        <div class="stat-box">
-          <div class="stat-number">13</div>
-          <div class="stat-label">Repos públicos</div>
-          <div style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Código, herramientas, demos</div>
+        <div class="timeline-item">
+          <div class="timeline-year">Universitat de València</div>
+          <div class="timeline-content">Docencia en grado de Logopedia. Asignaturas de intervención clínica</div>
         </div>
-        <div class="stat-box">
-          <div class="stat-number">6</div>
-          <div class="stat-label">Demos live</div>
-          <div style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Funcionales, clínicas validadas</div>
+        <div class="timeline-item">
+          <div class="timeline-year">Universidad de Barcelona</div>
+          <div class="timeline-content">Formación en metodología y evaluación logopédica</div>
         </div>
-        <div class="stat-box">
-          <div class="stat-number">10+</div>
-          <div class="stat-label">Años clínica</div>
-          <div style="font-size: 11px; color: #94a3b8; margin-top: 8px;">Experiencia profesional real</div>
+        <div class="timeline-item">
+          <div class="timeline-year">Colegio Profesional Murcia</div>
+          <div class="timeline-content">Seminarios sobre práctica clínica y nuevas tecnologías</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">ALPA (Asociación Logopedas)</div>
+          <div class="timeline-content">Formación a profesionales. IA aplicada a logopedia</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Hospital Comarcal</div>
+          <div class="timeline-content">Formación de residentes y profesionales en contexto hospitalario</div>
         </div>
       </div>
     </section>
 
+    <!-- PUBLICACIONES -->
     <section>
-      <h2>HABILIDADES & EXPERTISE</h2>
-      <p style="margin-bottom: 15px; color: #cbd5e1;">
+      <h2>► PUBLICACIONES</h2>
+      <p style="margin-bottom: 20px;">
+        Autor de <strong>6 libros</strong> relacionados con logopedia, intervención clínica y aplicación de tecnología en práctica profesional.
+      </p>
+      <div class="col" style="background: rgba(0, 255, 136, 0.05); border: 2px dashed #00ff88; padding: 20px;">
+        <p style="color: #c8ffb0; font-size: 13px; line-height: 1.9;">
+          Publicaciones centradas en transferencia de conocimiento clínico,
+          validación de métodos y construcción de sistemas accesibles para profesionales.
+          No son publicaciones teóricas abstractas, sino guías prácticas desde experiencia real de 18 años.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROYECTOS ANTERIORES -->
+    <section>
+      <h2>► TRAYECTORIA: PROYECTOS ANTERIORES</h2>
+      <p style="margin-bottom: 20px;">
+        Evolución profesional documentada. Estos proyectos reflejan proceso iterativo de construcción,
+        aprendizaje y consolidación hacia líneas actuales (Logoped-IA + Gabinete Fönia).
+      </p>
+      <div class="two-col">
+        <div class="col">
+          <h3 style="margin-top: 0;">Proyectos pioneros</h3>
+          <ul>
+            <li>Fonadis (plataforma de voz)</li>
+            <li>Rimud (juegos de lenguaje)</li>
+            <li>TiendaLogopedia (e-commerce)</li>
+            <li>BookingSalud (gestión citas)</li>
+            <li>EcoVisión Quilato (análisis digital)</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3 style="margin-top: 0;">Empresa anterior</h3>
+          <ul>
+            <li>NeuronAll (formación online)</li>
+            <li>Plataforma de cursos</li>
+            <li>Comunidad de profesionales</li>
+            <li>Base para evolución actual</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 20px; border-top: 2px dashed #00ff88; padding-top: 15px; color: #c8ffb0;">
+        Todos estos proyectos evidencian recorrido real: intentos, pivotes, aprendizajes.
+        No son fracasos — son etapas de construcción hacia ecosistema actual consolidado.
+      </p>
+    </section>
+
+    <!-- MÉTRICAS -->
+    <section>
+      <h2>► TRACTION & MÉTRICAS</h2>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="stat-number">18+</div>
+          <div class="stat-label">Años clínica</div>
+          <div class="stat-detail">Experiencia real, validada</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">900+</div>
+          <div class="stat-label">Comunidad Telegram</div>
+          <div class="stat-detail">Logopedas activos, feedback diario</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Libros publicados</div>
+          <div class="stat-detail">Transferencia conocimiento</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">13</div>
+          <div class="stat-label">Repos públicos</div>
+          <div class="stat-detail">Código, herramientas, demos</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Demostraciones live</div>
+          <div class="stat-detail">Funcionales, clínicamente validadas</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Universidades</div>
+          <div class="stat-detail">Docencia impartida</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIÓN PROFESIONAL -->
+    <section>
+      <h2>► VISIÓN PROFESIONAL</h2>
+      <div class="col" style="background: rgba(0, 255, 136, 0.05); border: 2px dashed #00ff88; padding: 25px;">
+        <h3 style="margin-top: 0; margin-bottom: 15px;">Propósito</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="border: none; color: #c8ffb0; padding: 8px 0;">
+            <strong>►</strong> Evolucionar logopedia hacia modelos más eficientes y accesibles
+          </li>
+          <li style="border: none; color: #c8ffb0; padding: 8px 0;">
+            <strong>►</strong> Integrar tecnología con criterio clínico sólido
+          </li>
+          <li style="border: none; color: #c8ffb0; padding: 8px 0;">
+            <strong>►</strong> Reducir dependencia del modelo tiempo–dinero exclusivo
+          </li>
+          <li style="border: none; color: #c8ffb0; padding: 8px 0;">
+            <strong>►</strong> Construir sistemas escalables aplicados a intervención real
+          </li>
+          <li style="border: none; color: #c8ffb0; padding: 8px 0;">
+            <strong>►</strong> Validación constante en contexto clínico
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERTISE & SKILLS -->
+    <section>
+      <h2>► HABILIDADES & EXPERTISE</h2>
+
+      <h3>Clínica & Método</h3>
+      <p>
         <span class="tag">Logopedia clínica</span>
         <span class="tag">Disfonía</span>
         <span class="tag">Dislexia</span>
         <span class="tag">Apraxia</span>
         <span class="tag">Tartamudez</span>
         <span class="tag">Disfagia</span>
+        <span class="tag">Atención temprana</span>
       </p>
-      <p style="margin-bottom: 15px; color: #cbd5e1;">
+
+      <h3>Tecnología & IA</h3>
+      <p>
         <span class="tag">IA aplicada</span>
         <span class="tag">No-code</span>
         <span class="tag">Análisis acústico</span>
@@ -383,19 +637,31 @@
         <span class="tag">Formación profesional</span>
         <span class="tag">Community building</span>
       </p>
-      <p style="color: #cbd5e1;">
+
+      <h3>Metodologías</h3>
+      <p>
         <span class="tag">TEACCH</span>
         <span class="tag">Onda Educa</span>
         <span class="tag">Método Verbotonal</span>
-        <span class="tag">Enfoque centrado en evidencia</span>
+        <span class="tag">Enfoque basado en evidencia</span>
+        <span class="tag">Intervención funcional</span>
+      </p>
+
+      <h3>Perfil</h3>
+      <p>
+        <span class="tag">Práctico, no teórico</span>
+        <span class="tag">Prueba–error–mejora</span>
+        <span class="tag">Constructor de soluciones</span>
+        <span class="tag">Clínico con visión tech</span>
       </p>
     </section>
 
+    <!-- CTA -->
     <div class="cta-section">
       <h2>CONECTA CONMIGO</h2>
       <p class="cta-text">
-        Clínica activa + IA innovadora + comunidad de 900+ profesionales.<br>
-        <strong>Inversión | Partnerships | Colaboración | Innovación Clínica</strong>
+        <strong>Clínica activa + Startup IA + Comunidad 900+ + 18 años experiencia</strong><br><br>
+        Busco: Inversores | Partners tecnológicos | Colaboradores en IA clínica | Empresas de salud digital
       </p>
       <div class="links-grid">
         <a href="https://www.logopediafonia.com" class="link-btn" target="_blank">🏥 CLÍNICA</a>
@@ -409,17 +675,20 @@
       </div>
     </div>
 
+    <!-- WARNING -->
     <div class="warning-box">
-      ⚠️ <strong>NOTA IMPORTANTE:</strong> Esta no es una landing corporativa de diseño. 
-      Es honesta y refleja lo que realmente eres: logopeda creativo, clínico activo, 
-      emprendedor en IA, con comunidad real de 900+ profesionales. 
-      Tu fortaleza no es la estética — es la visión + ejecución + credibilidad clínica.
+      ⚠️ <strong>NOTA IMPORTANTE:</strong> Esta landing no es un ejercicio de diseño corporativo.
+      Es honesta y refleja quién eres realmente: logopeda clínico práctico con 18+ años,
+      creador de soluciones digitales, emprendedor en IA, con comunidad real de 900+ profesionales.
+      Tu fortaleza no es la estética — es la clínica validada + visión + ejecución + credibilidad.
     </div>
 
     <footer>
-      <p>José Aserraf | Logopeda | IA Creador | Founder Logoped-IA</p>
-      <p>Director Gabinete Fönia | 900+ comunidad Telegram | 13 proyectos activos</p>
-      <p style="margin-top: 10px; color: #475569;">© 2026. Clínica activa + Startup IA.</p>
+      <p>JOSÉ ASERRAF | Logopeda • IA Creador • Founder Logoped-IA • Director Gabinete Fönia</p>
+      <p>Presidente ASMEL | 900+ comunidad Telegram | 13 proyectos activos | 18+ años clínica</p>
+      <p style="margin-top: 15px; color: #00ff88;">
+        © 2026 | Clínica Activa + Startup IA + Comunidad | Made by Logopeda Creativo
+      </p>
     </footer>
 
   </div>
